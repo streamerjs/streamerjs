@@ -99,8 +99,12 @@
   },
   "ava": {
     "source": [
-      "test/**/*.js",
+      "test/**/*.spec.js",
       "build/**/*.js",
+      "!build/**/*.spec.js"
+    ],
+    "files": [
+      "test/**/*.spec.js",
       "!build/**/*.spec.js"
     ]
   },
