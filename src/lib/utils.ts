@@ -1,5 +1,5 @@
 export default {
-  isArray(source: any) {
-    return source instanceof Array;
+  isArray (source: any) {
+    return source instanceof Array
   }
 }

@@ -1,8 +1,8 @@
-import ILazySequence from './lazy_sequence'
+import LazySequence from './interface/lazy_sequence'
 import map from '../methods/map'
 import take from '../methods/take'
 
-export default class ArraySequence<T> implements ILazySequence<T> {
+export default class ArraySequence<T> implements LazySequence<T> {
   private source: Iterable<T>;
 
   constructor(source: Iterable<T>) {

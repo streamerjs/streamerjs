@@ -15,8 +15,8 @@ import ArraySequence from './sequence/array'
 
 export function Streamer (source: any) {
   if (Utils.isArray(source)) {
-    return new ArraySequence(source);
+    return new ArraySequence(source)
   }
 
-  return null;
+  return null
 }
