@@ -6,29 +6,29 @@ import all from '../methods/all'
 import toArray from '../methods/toArray'
 
 export default class ArraySequence<T> implements LazySequence<T> {
-  private source: Iterable<T>;
+  private source: Iterable<T>
 
-  constructor(source: Iterable<T>) {
-    this.source = source;
+  constructor (source: Iterable<T>) {
+    this.source = source
   }
 
-  public map<U>(fn: (T) => U): ArraySequence<U> {
-    return new ArraySequence(map<T, U>(this.source, fn));
+  public map<U> (fn: (T) => U): ArraySequence<U> {
+    return new ArraySequence(map<T, U>(this.source, fn))
   }
 
-  public take(count: number): Iterable<T> {
-    return take(this.source, count);
+  public take (count: number): Iterable<T> {
+    return take(this.source, count)
   }
 
-  public first(): T {
-    return first(this.source);
+  public first (): T {
+    return first(this.source)
   }
 
-  public toArray(): T[] {
-    return toArray(this.source);
+  public toArray (): T[] {
+    return toArray(this.source)
   }
 
-  public all(fn: (T) => boolean): boolean {
-    return all(fn, this.source);
+  public all (fn?: (T) => boolean): boolean {
+    return all(this.source, fn)
   }
 }

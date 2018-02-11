@@ -4,19 +4,19 @@
  * Takes an Iterable and a number, `count`, and returns another Iterable with `count` elements
  *
  */
-export default function take<T>(iter: Iterable<T>, count: number): Iterable<T> {
-  let result = [];
-  let iterator = iter[Symbol.iterator]();
+export default function take<T> (iter: Iterable<T>, count: number): Iterable<T> {
+  let result = []
+  let iterator = iter[Symbol.iterator]()
 
-  while(count >= 0 && count--) {
-    let { value, done } = iterator.next();
+  while (count >= 0 && count--) {
+    let { value, done } = iterator.next()
 
     if (done) {
-      break;
+      break
     }
 
-    result.push(value);
+    result.push(value)
   }
 
-  return result;
+  return result
 }
