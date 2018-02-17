@@ -28,6 +28,11 @@ Piece of :cake:
 
 Streamer.js is a lazy evaluation for iterable data types (Set, Array, LinkedList, Generators, etc.). It can also send HTTP requests and ask the data from remote endpoints. Streamer.js tries to implement most of [Kotlin Lazy Sequence](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.sequences/index.html) methods.
 
+### What is "Lazy Evaluation"?
+
+In programming language theory, lazy evaluation, or call-by-need is an evaluation strategy which delays the evaluation of an expression until its value is needed (non-strict evaluation).  
+Read more: https://en.wikipedia.org/wiki/Lazy_evaluation
+
 ### Bug report
 
 Please open a ticket in GitHub issues.
