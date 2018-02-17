@@ -1,8 +1,12 @@
+  <div align="center">
+
 # StreamerJs
 
 [![Build Status](https://travis-ci.org/streamerjs/streamerjs.svg?branch=master)](https://travis-ci.org/streamerjs/streamerjs)
 
 Easy to use lazy evaluation library 
+
+</center>
 
 **Example:** 
 
