@@ -3,7 +3,9 @@ import map from '../methods/map'
 import take from '../methods/take'
 import first from '../methods/first'
 import all from '../methods/all'
+import any from '../methods/any'
 import toArray from '../methods/toArray'
+import asIterable from '../methods/asIterable'
 
 export default class ArraySequence<T> implements LazySequence<T> {
   private source: Iterable<T>
@@ -28,7 +30,15 @@ export default class ArraySequence<T> implements LazySequence<T> {
     return toArray(this.source)
   }
 
+  public asIterable (): Iterable<T> {
+    return asIterable(this.source)
+  }
+
   public all (fn?: (T) => boolean): boolean {
     return all(this.source, fn)
+  }
+
+  public any (fn?: (T) => boolean): boolean {
+    return any(this.source, fn)
   }
 }
