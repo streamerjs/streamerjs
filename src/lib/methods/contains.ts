@@ -1,5 +1,5 @@
 /*
- * Takes an Iterable and a T, returns true if the iterable has the element 
+ * Takes an Iterable and a T, returns true if the iterable has the element
  *
  */
 export default function contains<T> (iter: Iterable<T>, element: T): boolean {
