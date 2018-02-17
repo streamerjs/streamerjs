@@ -22,6 +22,20 @@ Streamer([1, 2, 3, 4])
 
 Piece of :cake:
 
+## FAQ
+
+### What is Streamer.js?
+
+Streamer.js is a lazy evaluation for iterable data types (Set, Array, LinkedList, Generators, etc.). It can also send HTTP requests and ask the data from remote endpoints. Streamer.js tries to implement most of [Kotlin Lazy Sequence](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.sequences/index.html) methods.
+
+### Bug report
+
+Please open a ticket in GitHub issues.
+
+### Contribution
+
+Please create a branch for each patch and send a PR to GitHub. Make sure you write tests. There is a CI integarated with this repo. 
+
 ## License
 
 GPLv3
