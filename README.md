@@ -1,12 +1,14 @@
-  <div align="center">
+<div align="center">
 
-# StreamerJs
+<b>StreamerJs</b>
+</br>
 
 [![Build Status](https://travis-ci.org/streamerjs/streamerjs.svg?branch=master)](https://travis-ci.org/streamerjs/streamerjs)
 
-Easy to use lazy evaluation library 
+Easy to use lazy evaluation library for JavaScript / TypeScript
 
-</center>
+<hr></hr>
+</div>
 
 **Example:** 
 
