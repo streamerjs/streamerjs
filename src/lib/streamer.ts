@@ -11,11 +11,11 @@
  */
 
 import Utils from './utils'
-import ArraySequence from './sequence/array'
+import IterableSequence from './sequence/iterable'
 
 export function Streamer (source: any) {
-  if (Utils.isArray(source)) {
-    return new ArraySequence(source)
+  if (Utils.isIterable(source)) {
+    return new IterableSequence(source)
   }
 
   return null

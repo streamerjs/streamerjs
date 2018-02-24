@@ -1,25 +1,35 @@
 import LazySequence from './interface/lazy_sequence'
 import map from '../methods/map'
+import filter from '../methods/filter'
 import take from '../methods/take'
+import drop from '../methods/drop'
 import first from '../methods/first'
 import all from '../methods/all'
 import any from '../methods/any'
 import toArray from '../methods/toArray'
 import asIterable from '../methods/asIterable'
 
-export default class ArraySequence<T> implements LazySequence<T> {
+export default class IterableSequence<T> implements LazySequence<T> {
   private source: Iterable<T>
 
   constructor (source: Iterable<T>) {
     this.source = source
   }
 
-  public map<U> (fn: (T) => U): ArraySequence<U> {
-    return new ArraySequence(map<T, U>(this.source, fn))
+  public filter (fn: (T) => boolean): IterableSequence<T> {
+    return new IterableSequence(filter<T>(this.source, fn))
+  }
+
+  public map<U> (fn: (T) => U): IterableSequence<U> {
+    return new IterableSequence(map<T, U>(this.source, fn))
   }
 
   public take (count: number): Iterable<T> {
     return take(this.source, count)
+  }
+
+  public drop (count: number): IterableSequence<T> {
+    return new IterableSequence(drop<T>(this.source, count))
   }
 
   public first (): T {

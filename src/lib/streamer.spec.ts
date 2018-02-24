@@ -37,3 +37,24 @@ test('Streamer array first', t => {
 
   t.deepEqual(1, streamer.first())
 })
+
+test('Streamer array filter and first', t => {
+  const source = [1,2,3,4,5,6]
+  let streamer = Streamer(source)
+
+  t.deepEqual(4, streamer.filter((x) => x > 3).first())
+})
+
+test('Streamer array filter and take', t => {
+  const source = [1,2,3,4,5,6]
+  let streamer = Streamer(source)
+
+  t.deepEqual([3, 4], streamer.filter((x) => x > 2).take(2))
+})
+
+test('Streamer string filter and take', t => {
+  const source = 'you are beautiful'
+  let streamer = Streamer(source)
+
+  t.deepEqual('beautiful', streamer.drop(8).toArray().join(''))
+})
