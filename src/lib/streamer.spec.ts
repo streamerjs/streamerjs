@@ -58,3 +58,15 @@ test('Streamer string filter and take', t => {
 
   t.deepEqual('beautiful', streamer.drop(8).toArray().join(''))
 })
+
+test('Streamer array number sort with last / first', t => {
+  const source = [5,3,1,2,6,9,8]
+  let streamer = Streamer(source)
+  const desc = (a, b) => a > b ? 1 : -1
+  const asc = (a, b) => b > a ? 1 : -1
+
+  t.deepEqual(1, streamer.sortedBy(desc).first())
+  t.deepEqual(9, streamer.sortedBy(desc).last())
+  t.deepEqual(9, streamer.sortedBy(asc).first())
+  t.deepEqual(1, streamer.sortedBy(asc).last())
+})

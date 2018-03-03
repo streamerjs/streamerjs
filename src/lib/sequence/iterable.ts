@@ -4,10 +4,12 @@ import filter from '../methods/filter'
 import take from '../methods/take'
 import drop from '../methods/drop'
 import first from '../methods/first'
+import last from '../methods/last'
 import all from '../methods/all'
 import any from '../methods/any'
 import toArray from '../methods/toArray'
 import asIterable from '../methods/asIterable'
+import sortedBy from '../methods/sortedBy'
 
 export default class IterableSequence<T> implements LazySequence<T> {
   private source: Iterable<T>
@@ -36,6 +38,10 @@ export default class IterableSequence<T> implements LazySequence<T> {
     return first(this.source)
   }
 
+  public last (): T {
+    return last(this.source)
+  }
+
   public toArray (): T[] {
     return toArray(this.source)
   }
@@ -50,5 +56,9 @@ export default class IterableSequence<T> implements LazySequence<T> {
 
   public any (fn?: (T) => boolean): boolean {
     return any(this.source, fn)
+  }
+
+  public sortedBy (cmp: (a: T, b: T) => number): IterableSequence<T> {
+    return new IterableSequence(sortedBy(this.source, cmp))
   }
 }
