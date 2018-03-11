@@ -6,7 +6,7 @@ import toArray from './toArray'
  * returns a generator
  *
  */
-export default function sortedBy<T> (iter: Iterable<T>, cmp: (a: T, b: T) => number): T[] {
+export default function sortedWith<T> (iter: Iterable<T>, cmp: (a: T, b: T) => number): T[] {
   let source = toArray(iter)
   return source.sort(cmp)
 }

@@ -65,8 +65,15 @@ test('Streamer array number sort with last / first', t => {
   const desc = (a, b) => a > b ? 1 : -1
   const asc = (a, b) => b > a ? 1 : -1
 
-  t.deepEqual(1, streamer.sortedBy(desc).first())
-  t.deepEqual(9, streamer.sortedBy(desc).last())
-  t.deepEqual(9, streamer.sortedBy(asc).first())
-  t.deepEqual(1, streamer.sortedBy(asc).last())
+  t.deepEqual(1, streamer.sortedWith(desc).first())
+  t.deepEqual(9, streamer.sortedWith(desc).last())
+  t.deepEqual(9, streamer.sortedWith(asc).first())
+  t.deepEqual(1, streamer.sortedWith(asc).last())
+})
+
+test('Streamer sum of numbers', t => {
+  const source = [3, 1, 0.2]
+  let streamer = Streamer(source)
+
+  t.deepEqual(4.2, streamer.sum())
 })

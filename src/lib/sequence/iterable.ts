@@ -5,17 +5,22 @@ import take from '../methods/take'
 import drop from '../methods/drop'
 import first from '../methods/first'
 import last from '../methods/last'
+import sum from '../methods/sum'
 import all from '../methods/all'
 import any from '../methods/any'
 import toArray from '../methods/toArray'
 import asIterable from '../methods/asIterable'
-import sortedBy from '../methods/sortedBy'
+import sortedWith from '../methods/sortedWith'
 
 export default class IterableSequence<T> implements LazySequence<T> {
   private source: Iterable<T>
 
   constructor (source: Iterable<T>) {
     this.source = source
+  }
+
+  public sum (): number {
+    return sum(this.source)
   }
 
   public filter (fn: (T) => boolean): IterableSequence<T> {
@@ -58,7 +63,7 @@ export default class IterableSequence<T> implements LazySequence<T> {
     return any(this.source, fn)
   }
 
-  public sortedBy (cmp: (a: T, b: T) => number): IterableSequence<T> {
-    return new IterableSequence(sortedBy(this.source, cmp))
+  public sortedWith (cmp: (a: T, b: T) => number): IterableSequence<T> {
+    return new IterableSequence(sortedWith(this.source, cmp))
   }
 }
